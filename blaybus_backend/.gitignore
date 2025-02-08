@@ -1,0 +1,16 @@
+# 데이터베이스
+db.sqlite3
+
+# Django 마이그레이션 캐시
+**/__pycache__/
+**/migrations/
+
+# 환경 변수 파일 (.env) 제외
+.env
+
+# 기타 시스템 파일 제외
+*.pyc
+*.pyo
+*.log
+
+venv
