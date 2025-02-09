@@ -1,0 +1,68 @@
+.photo-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap; /* 반응형에서 여러 줄로 배치되도록 */
+}
+
+.photo-gallery img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.photo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+.photo-modal-content {
+  position: relative;
+  max-width: 80vw; /* 화면의 80% 너비로 제한 */
+  max-height: 80vh; /* 화면의 80% 높이로 제한 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-modal-content img {
+  width: 100%;
+  height: auto; /* 비율 유지하며 축소 */
+  max-width: 80vw; /* 확대된 사진이 화면을 벗어나지 않도록 제한 */
+  max-height: 80vh; /* 확대된 사진이 화면을 벗어나지 않도록 제한 */
+  object-fit: contain; /* 비율 유지 */
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px; /* 버튼 위치 조정 */
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8); /* 버튼 배경을 흰색으로 변경 */
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 버튼에 약간의 그림자 추가 */
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 1); /* 버튼 강조 효과 */
+}

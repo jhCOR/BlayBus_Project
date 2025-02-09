@@ -1,0 +1,174 @@
+/* 기본 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* 좌우 스크롤 방지 */
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+}
+
+/* 메뉴 스타일 */
+.menu-bar {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 필요에 따라 center/space-around 등으로 변경 */
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 20px; /* 메뉴 사이 간격 */
+}
+
+.menu-bar a,
+.menu-bar button {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.menu-bar a:hover,
+.menu-bar button:hover {
+    color: #fff;
+    background-color: #b01c2e;
+    border-radius: 5px;
+}
+
+/* ▼ 배경 GIF를 담는 컨테이너에 position: relative와 높이를 지정 */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 60vh; /* 원하는 높이로 조절 가능 */
+    overflow: hidden;
+    margin-bottom: 0; /* 하단 여백 필요 시 조절 */
+}
+
+.background-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ▼ 오버레이는 부모 .video-container 안에서만 움직이도록 함 */
+.overlay {
+    position: absolute;
+    inset: 0;       /* top:0, right:0, bottom:0, left:0 와 동일 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+}
+
+/* 리뷰 섹션 */
+.review-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    padding: 40px 0;
+    z-index: 1;
+}
+
+.review-section h3 {
+    font-size: 1.8rem;
+    color: #b01c2e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 캐러셀 */
+.slick-slider {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* 리뷰 카드 */
+.review-card {
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.review-card span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+    .review-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        width: calc(100% - 20px);
+    }
+}

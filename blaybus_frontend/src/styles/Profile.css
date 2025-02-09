@@ -1,0 +1,143 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.tab.active {
+  color: #b01c2e;
+  border-bottom: 2px solid #b01c2e;
+}
+
+.profile-content {
+  margin-top: 20px;
+  text-align: left; /* 글 정렬을 왼쪽으로 */
+}
+
+.profile-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.profile-info strong {
+  color: #b01c2e;
+}
+
+.request-button {
+  display: flex; /* 버튼 내부 텍스트 가운데 정렬 */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 버튼 그룹 안에서 중앙 정렬 */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold; /* 텍스트를 더 강조 */
+  background-color: #b01c2e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 48%; /* 버튼 간격을 유지하며 동일한 크기로 설정 */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.request-button:hover {
+  background-color: #8a1523;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+  display: flex;
+  justify-content: center; /* 버튼들을 중앙으로 정렬 */
+  gap: 15px; /* 버튼 사이 여백 */
+  margin-bottom: 20px;
+  flex-wrap: nowrap; /* 모바일에서 버튼이 한 줄에 들어가지 않으면 줄바꿈 */
+}
+
+.button-group .request-button {
+  flex: none; /* 버튼 크기가 화면 크기에 따라 변하지 않음 */
+}
+
+.home-icon-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #b01c2e;
+}
+
+.home-icon-button:hover {
+  color: #8a1523;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .tab {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .button-group {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .button-group .request-button {
+    width: calc(50% - 10px);
+  }
+
+  .home-icon-button {
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+  }
+}
